@@ -20,7 +20,7 @@ const App = (props) => {
     <p data-testid="text">{props.slides[next]["text"]}</p>
     <button disabled={next <= 0} onClick={prevButton} data-testid="button-prev">Prev</button>
     <button disabled={next >= len} onClick={nextButton} data-testid="button-next">Next</button>
-    <button disabled={next <= 0 || next >= len} onClick={()=>{setNext(0)}} data-testid="button-restart">Restart</button>
+    <button disabled={next <= 0} onClick={()=>{setNext(0)}} data-testid="button-restart">Restart</button>
     </>
   )
 }
