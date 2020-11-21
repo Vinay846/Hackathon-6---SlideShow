@@ -6,7 +6,6 @@ const App = (props) => {
   let len = props.slides.length-2;
 
   const nextButton =()=>{
-    console.log(len);
     (next <= len)
     ? setNext(next+1):len
   }
@@ -19,7 +18,7 @@ const App = (props) => {
     <h1 data-testid="title">{props.slides[next]["title"]}</h1>
     <p data-testid="text">{props.slides[next]["text"]}</p>
     <button disabled={next <= 0} onClick={prevButton} data-testid="button-prev">Prev</button>
-    <button disabled={next >= len} onClick={nextButton} data-testid="button-next">Next</button>
+    <button disabled={next > len} onClick={nextButton} data-testid="button-next">Next</button>
     <button disabled={next <= 0} onClick={()=>{setNext(0)}} data-testid="button-restart">Restart</button>
     </>
   )
